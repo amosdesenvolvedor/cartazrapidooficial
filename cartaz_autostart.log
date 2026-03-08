@@ -1,0 +1,99 @@
+time="2025-12-05T19:08:38-04:00" level=warning msg="/home/corporativo/Documentos/cartazRapido/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ app Skipped - No image to be pulled 
+ phpmyadmin Pulling 
+ letsencrypt Pulling 
+ db Pulling 
+ nginx-proxy Pulling 
+ phpmyadmin Error Get "https://registry-1.docker.io/v2/": dial tcp: lookup registry-1.docker.io on 127.0.0.53:53: server misbehaving
+ nginx-proxy  Interrupted
+ db  Interrupted
+ letsencrypt  Interrupted
+Error response from daemon: Get "https://registry-1.docker.io/v2/": dial tcp: lookup registry-1.docker.io on 127.0.0.53:53: server misbehaving
+time="2025-12-05T19:09:19-04:00" level=warning msg="/home/corporativo/Documentos/cartazRapido/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Container cartaz_db  Running
+ Container cartaz_phpmyadmin  Running
+ Container cartaz_nginx_proxy  Starting
+ Container cartaz_app  Starting
+ Container cartaz_nginx_proxy  Started
+ Container cartaz_letsencrypt  Starting
+ Container cartaz_app  Started
+ Container cartaz_letsencrypt  Started
+time="2025-12-06T00:49:22-04:00" level=warning msg="/home/corporativo/Documentos/cartazRapido/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ app Skipped - No image to be pulled 
+ letsencrypt Pulling 
+ db Pulling 
+ phpmyadmin Pulling 
+ nginx-proxy Pulling 
+ db Error Get "https://registry-1.docker.io/v2/": dial tcp: lookup registry-1.docker.io on 127.0.0.53:53: server misbehaving
+ phpmyadmin  Interrupted
+ nginx-proxy  Interrupted
+ letsencrypt  Interrupted
+Error response from daemon: Get "https://registry-1.docker.io/v2/": dial tcp: lookup registry-1.docker.io on 127.0.0.53:53: server misbehaving
+time="2025-12-06T00:50:03-04:00" level=warning msg="/home/corporativo/Documentos/cartazRapido/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Container cartaz_db  Running
+ Container cartaz_phpmyadmin  Running
+ Container cartaz_nginx_proxy  Starting
+ Container cartaz_app  Starting
+ Container cartaz_nginx_proxy  Started
+ Container cartaz_letsencrypt  Starting
+ Container cartaz_app  Started
+ Container cartaz_letsencrypt  Started
+time="2025-12-06T00:56:11-04:00" level=warning msg="/home/corporativo/Documentos/cartazRapido/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ nginx-proxy Pulling 
+ letsencrypt Pulling 
+ app Skipped - No image to be pulled 
+ db Pulling 
+ phpmyadmin Pulling 
+ nginx-proxy Error Get "https://registry-1.docker.io/v2/": dial tcp: lookup registry-1.docker.io on 127.0.0.53:53: server misbehaving
+ db  Interrupted
+ phpmyadmin  Interrupted
+ letsencrypt  Interrupted
+Error response from daemon: Get "https://registry-1.docker.io/v2/": dial tcp: lookup registry-1.docker.io on 127.0.0.53:53: server misbehaving
+time="2025-12-06T00:56:51-04:00" level=warning msg="/home/corporativo/Documentos/cartazRapido/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Container cartaz_db  Running
+ Container cartaz_phpmyadmin  Running
+ Container cartaz_nginx_proxy  Starting
+ Container cartaz_app  Starting
+ Container cartaz_nginx_proxy  Started
+ Container cartaz_letsencrypt  Starting
+ Container cartaz_app  Started
+ Container cartaz_letsencrypt  Started
+time="2025-12-06T01:18:07-04:00" level=warning msg="/home/corporativo/Documentos/cartazRapido/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ app Skipped - No image to be pulled 
+ db Pulling 
+ nginx-proxy Pulling 
+ phpmyadmin Pulling 
+ letsencrypt Pulling 
+ phpmyadmin Error Get "https://registry-1.docker.io/v2/": dial tcp: lookup registry-1.docker.io on 127.0.0.53:53: server misbehaving
+ nginx-proxy  Interrupted
+ db  Interrupted
+ letsencrypt  Interrupted
+Error response from daemon: Get "https://registry-1.docker.io/v2/": dial tcp: lookup registry-1.docker.io on 127.0.0.53:53: server misbehaving
+time="2025-12-06T01:19:16-04:00" level=warning msg="/home/corporativo/Documentos/cartazRapido/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Container cartaz_db  Running
+ Container cartaz_phpmyadmin  Running
+ Container cartaz_nginx_proxy  Starting
+ Container cartaz_app  Starting
+ Container cartaz_app  Started
+ Container cartaz_nginx_proxy  Started
+ Container cartaz_letsencrypt  Starting
+ Container cartaz_letsencrypt  Started
+time="2025-12-06T01:38:12-04:00" level=warning msg="/home/corporativo/Documentos/cartazRapido/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ app Skipped - No image to be pulled 
+ letsencrypt Pulling 
+ db Pulling 
+ phpmyadmin Pulling 
+ nginx-proxy Pulling 
+ phpmyadmin Pulled 
+ letsencrypt Pulled 
+ nginx-proxy Pulled 
+ db Pulled 
+time="2025-12-06T01:39:27-04:00" level=warning msg="/home/corporativo/Documentos/cartazRapido/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+ Container cartaz_db  Running
+ Container cartaz_phpmyadmin  Running
+ Container cartaz_nginx_proxy  Starting
+ Container cartaz_app  Starting
+ Container cartaz_nginx_proxy  Started
+ Container cartaz_letsencrypt  Starting
+ Container cartaz_app  Started
+ Container cartaz_letsencrypt  Started

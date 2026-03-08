@@ -1,0 +1,106 @@
+version: "3.9"
+
+services:
+  nginx-proxy:
+    image: nginxproxy/nginx-proxy:1.6
+    container_name: cartaz_nginx_proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - certs:/etc/nginx/certs
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - ./docker/nginx/client_max_body_size.conf:/etc/nginx/conf.d/client_max_body_size.conf:ro
+    networks:
+      - web
+      - default
+    environment:
+      ENABLE_IPV6: "false"
+      DEFAULT_HOST: cartazrapido.site
+      CLIENT_MAX_BODY_SIZE: 16m
+
+  letsencrypt:
+    image: nginxproxy/acme-companion:2.4
+    container_name: cartaz_letsencrypt
+    depends_on:
+      - nginx-proxy
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - certs:/etc/nginx/certs
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+    environment:
+      DEFAULT_EMAIL: amos.mo.ads@gmail.com
+      NGINX_PROXY_CONTAINER: cartaz_nginx_proxy
+    networks:
+      - web
+      - default
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cartaz_app
+    env_file:
+      - .env
+    expose:
+      - "80"
+    environment:
+      APACHE_DOCUMENT_ROOT: /var/www/html
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: cartaz
+      DB_USERNAME: cartaz_user
+      DB_PASSWORD: cartaz_pass
+      VIRTUAL_HOST: cartazrapido.site,www.cartazrapido.site
+      LETSENCRYPT_HOST: cartazrapido.site,www.cartazrapido.site
+      LETSENCRYPT_EMAIL: amos.mo.ads@gmail.com
+      HTTPS_METHOD: noredirect
+    volumes:
+      - ./src:/var/www/html
+      - ./.env:/var/www/html/.env
+    depends_on:
+      - db
+    networks:
+      - web
+      - default
+
+  db:
+    image: mysql:8.0
+    container_name: cartaz_db
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_pass
+      MYSQL_DATABASE: cartaz
+      MYSQL_USER: cartaz_user
+      MYSQL_PASSWORD: cartaz_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.2
+    container_name: cartaz_phpmyadmin
+    restart: always
+    ports:
+      - "9090:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: cartaz_user
+      PMA_PASSWORD: cartaz_pass
+    depends_on:
+      - db
+
+volumes:
+  db_data:
+  certs:
+  vhost:
+  html:
+
+networks:
+  web:
+    external: false
